@@ -152,7 +152,10 @@
     "zod": "^3.25.76",
     "@azure/identity": "^4.5.0",
     "@azure/storage-blob": "^12.25.0",
-    "ioredis": "^5.4.1"
+    "ioredis": "^5.4.1",
+    "@azure/purview-catalog": "^1.0.0-beta.4",
+    "@azure/purview-administration": "^1.0.0-beta.2",
+    "@azure/monitor-ingestion": "^1.0.0"
   },
   "devDependencies": {
     "@react-email/preview-server": "^4.2.12",
