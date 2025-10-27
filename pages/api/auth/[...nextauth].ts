@@ -50,22 +50,22 @@ export const authOptions: NextAuthOptions = {
           scope: "openid profile email User.Read",
         },
       },
-      async profile(profile, tokens) {
+      profile(profile) {
         // Handle Azure AD B2B guest users
-        const userType = profile.userType || "Member"; // "Member" or "Guest"
-        const tenantId = profile.tid; // Tenant ID from token
-        const objectId = profile.oid; // Object ID (immutable)
+        const userType = (profile as any).userType || "Member"; // "Member" or "Guest"
+        const tenantId = (profile as any).tid; // Tenant ID from token
+        const objectId = (profile as any).oid; // Object ID (immutable)
 
         return {
-          id: objectId,
+          id: objectId || profile.sub,
           name: profile.name,
-          email: profile.email || profile.upn || profile.preferred_username,
-          image: profile.picture,
+          email: profile.email || (profile as any).upn || (profile as any).preferred_username,
+          image: (profile as any).picture,
           azureTenantId: tenantId,
           azureObjectId: objectId,
           userType: userType,
-          externalEmail: profile.mail || profile.email,
-        };
+          externalEmail: (profile as any).mail || profile.email,
+        } as any;
       },
       allowDangerousEmailAccountLinking: true,
     }),
@@ -206,6 +206,20 @@ export const authOptions: NextAuthOptions = {
         },
       };
 
+      // Update user with Azure AD B2B fields if present
+      const user = message.user as any;
+      if (user.azureTenantId || user.azureObjectId || user.userType) {
+        await prisma.user.update({
+          where: { id: message.user.id },
+          data: {
+            azureTenantId: user.azureTenantId,
+            azureObjectId: user.azureObjectId,
+            userType: user.userType || "Member",
+            externalEmail: user.externalEmail,
+          },
+        });
+      }
+
       await identifyUser(message.user.email ?? message.user.id);
       await trackAnalytics({
         event: "User Signed Up",
@@ -263,6 +277,24 @@ const getAuthOptions = (req: NextApiRequest): NextAuthOptions => {
     events: {
       ...authOptions.events,
       signIn: async (message) => {
+        // Update Azure AD B2B fields on sign in (for existing users)
+        const user = message.user as any;
+        if (user.azureTenantId || user.azureObjectId || user.userType) {
+          try {
+            await prisma.user.update({
+              where: { id: message.user.id },
+              data: {
+                azureTenantId: user.azureTenantId,
+                azureObjectId: user.azureObjectId,
+                userType: user.userType || "Member",
+                externalEmail: user.externalEmail,
+              },
+            });
+          } catch (error) {
+            console.error("Failed to update Azure AD fields:", error);
+          }
+        }
+
         // Identify and track sign-in without blocking the event flow
         await Promise.allSettled([
           identifyUser(message.user.email ?? message.user.id),

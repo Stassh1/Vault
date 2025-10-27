@@ -158,23 +158,42 @@ export class AzureBlobStore {
     }
     const buffer = Buffer.concat(chunks);
 
-    // Upload the data
-    if (offset === 0) {
-      // First write - create the blob
-      await blockBlobClient.upload(buffer, buffer.length);
-    } else {
-      // Append to existing blob
-      const appendBlobClient = containerClient.getAppendBlobClient(id);
-      await appendBlobClient.appendBlock(buffer, buffer.length);
+    // For tus protocol, we need to support resumable uploads
+    // Using block blob with staged blocks
+    const blockId = Buffer.from(`block-${offset}`).toString('base64');
+
+    try {
+      // Stage this block
+      await blockBlobClient.stageBlock(blockId, buffer, buffer.length);
+
+      // Get current block list and append new block
+      let blockList: string[] = [];
+      try {
+        const properties = await blockBlobClient.getProperties();
+        const metadata = properties.metadata || {};
+        blockList = JSON.parse(metadata.blockList || '[]');
+      } catch (error) {
+        // Blob doesn't exist yet, start fresh
+        blockList = [];
+      }
+
+      blockList.push(blockId);
+
+      // Commit all blocks
+      await blockBlobClient.commitBlockList(blockList);
+
+      // Update metadata with new offset and block list
+      const newOffset = offset + buffer.length;
+      await blockBlobClient.setMetadata({
+        upload_offset: newOffset.toString(),
+        blockList: JSON.stringify(blockList),
+      });
+
+      return buffer.length;
+    } catch (error) {
+      console.error('Azure Blob write error:', error);
+      throw error;
     }
-
-    // Update metadata with new offset
-    const newOffset = offset + buffer.length;
-    await blockBlobClient.setMetadata({
-      upload_offset: newOffset.toString(),
-    });
-
-    return buffer.length;
   }
 
   /**

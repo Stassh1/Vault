@@ -164,13 +164,24 @@ resource webApp 'Microsoft.Web/sites@2022-09-01' = {
           name: 'POSTGRES_PRISMA_URL_NON_POOLING'
           value: 'postgresql://${postgresAdminLogin}@${postgresServer.name}:${postgresAdminPassword}@${postgresServer.properties.fullyQualifiedDomainName}:5432/${postgresServerName}?sslmode=require'
         }
-        // Redis (Upstash alternative)
+        // Redis Connection String for Azure Cache
+        // Note: Papermark uses Upstash Redis REST API. For Azure deployment, either:
+        // 1. Use Upstash (recommended - set these env vars manually)
+        // 2. Or modify the app to use ioredis with Azure Cache for Redis
         {
-          name: 'UPSTASH_REDIS_REST_URL'
-          value: 'https://${redisCache.properties.hostName}:${redisCache.properties.sslPort}'
+          name: 'REDIS_URL'
+          value: 'redis://:${listKeys(redisCache.id, redisCache.apiVersion).primaryKey}@${redisCache.properties.hostName}:${redisCache.properties.sslPort}'
         }
         {
-          name: 'UPSTASH_REDIS_REST_TOKEN'
+          name: 'REDIS_HOST'
+          value: redisCache.properties.hostName
+        }
+        {
+          name: 'REDIS_PORT'
+          value: string(redisCache.properties.sslPort)
+        }
+        {
+          name: 'REDIS_PASSWORD'
           value: listKeys(redisCache.id, redisCache.apiVersion).primaryKey
         }
         // Email
