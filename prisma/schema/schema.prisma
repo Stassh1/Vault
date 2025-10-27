@@ -57,6 +57,13 @@ model User {
   startsAt       DateTime? // Stripe subscription start date
   endsAt         DateTime? // Stripe subscription end date
 
+  // Azure B2B Integration
+  azureTenantId  String? // Azure AD tenant ID for multi-tenant support
+  azureObjectId  String? // Azure AD object ID (immutable identifier)
+  userType       String?    @default("Member") // Member, Guest (Azure B2B guest users)
+  guestInviter   String? // ID of user who invited this guest
+  externalEmail  String? // Original email for B2B guest users
+
   restrictedTokens RestrictedToken[]
 
   // conversation
@@ -68,6 +75,10 @@ model User {
   createdAnnotations DocumentAnnotation[] // Annotations created by this user
 
   installedIntegrations InstalledIntegration[]
+
+  @@index([azureTenantId])
+  @@index([azureObjectId])
+  @@index([userType])
 }
 
 model Brand {

@@ -7,6 +7,7 @@ import NextAuth, { type NextAuthOptions } from "next-auth";
 import EmailProvider from "next-auth/providers/email";
 import GoogleProvider from "next-auth/providers/google";
 import LinkedInProvider from "next-auth/providers/linkedin";
+import AzureADProvider from "next-auth/providers/azure-ad";
 
 import { identifyUser, trackAnalytics } from "@/lib/analytics";
 import { dub } from "@/lib/dub";
@@ -40,6 +41,34 @@ export const authOptions: NextAuthOptions = {
     error: "/login",
   },
   providers: [
+    AzureADProvider({
+      clientId: process.env.AZURE_AD_CLIENT_ID as string,
+      clientSecret: process.env.AZURE_AD_CLIENT_SECRET as string,
+      tenantId: process.env.AZURE_AD_TENANT_ID,
+      authorization: {
+        params: {
+          scope: "openid profile email User.Read",
+        },
+      },
+      async profile(profile, tokens) {
+        // Handle Azure AD B2B guest users
+        const userType = profile.userType || "Member"; // "Member" or "Guest"
+        const tenantId = profile.tid; // Tenant ID from token
+        const objectId = profile.oid; // Object ID (immutable)
+
+        return {
+          id: objectId,
+          name: profile.name,
+          email: profile.email || profile.upn || profile.preferred_username,
+          image: profile.picture,
+          azureTenantId: tenantId,
+          azureObjectId: objectId,
+          userType: userType,
+          externalEmail: profile.mail || profile.email,
+        };
+      },
+      allowDangerousEmailAccountLinking: true,
+    }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,

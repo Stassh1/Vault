@@ -45,11 +45,17 @@ model Team {
   enableExcelAdvancedMode Boolean @default(false) // Enable Excel advanced mode for all documents in the team
   replicateDataroomFolders Boolean @default(true) // Replicate dataroom folder structure in "All Documents"
 
+  // Azure B2B Integration
+  azureTenantId String? // Azure AD tenant ID if team is linked to an Azure organization
+  azureGroupId  String? // Azure AD group ID for automatic team membership
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   ignoredDomains  String[] // Domains that are ignored for the team
   globalBlockList String[] // Email and domains that are blocked for the team
+
+  @@index([azureTenantId])
 }
 
 enum Role {

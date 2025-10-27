@@ -45,7 +45,7 @@ Papermark is the open-source document-sharing alternative to DocSend, featuring 
 - [Tinybird](https://tinybird.co) – Analytics
 - [Resend](https://resend.com) – Email
 - [Stripe](https://stripe.com) – Payments
-- [Vercel](https://vercel.com/) – Hosting
+- [Vercel](https://vercel.com/) or [Azure](https://azure.microsoft.com/) – Hosting
 
 ## Getting Started
 
@@ -122,6 +122,33 @@ cd ..
 cd papermark
 ## end: pkgx-specific
 pipenv update tinybird-cli
+```
+
+## Deployment
+
+### Deploy to Vercel
+
+The easiest way to deploy Papermark is using [Vercel](https://vercel.com):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mfts/papermark)
+
+### Deploy to Azure
+
+Papermark can be deployed to Azure with full Azure AD B2B guest user support. This is ideal for enterprise deployments.
+
+#### Features:
+- **Azure AD B2B Authentication**: Support for guest users from external organizations
+- **Azure Blob Storage**: Scalable file storage with managed identity
+- **Azure Database for PostgreSQL**: Fully managed database
+- **Automated Infrastructure**: Deploy with Bicep/ARM templates
+
+See the [Azure Deployment Guide](./azure/README.md) for detailed instructions.
+
+Quick start:
+```bash
+cd azure
+chmod +x deploy.sh
+./deploy.sh
 ```
 
 ## Contributing

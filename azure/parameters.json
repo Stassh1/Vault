@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "value": "papermark"
+    },
+    "environment": {
+      "value": "prod"
+    },
+    "appServicePlanSku": {
+      "value": "B2"
+    },
+    "postgresAdminLogin": {
+      "value": "papermarkadmin"
+    },
+    "postgresAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+        },
+        "secretName": "postgres-admin-password"
+      }
+    },
+    "azureAdClientId": {
+      "value": "your-azure-ad-client-id"
+    },
+    "azureAdClientSecret": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+        },
+        "secretName": "azure-ad-client-secret"
+      }
+    },
+    "azureAdTenantId": {
+      "value": "common"
+    },
+    "nextAuthSecret": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+        },
+        "secretName": "nextauth-secret"
+      }
+    },
+    "resendApiKey": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+        },
+        "secretName": "resend-api-key"
+      }
+    }
+  }
+}
