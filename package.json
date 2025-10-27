@@ -151,7 +151,8 @@
     "xlsx": "^0.18.5",
     "zod": "^3.25.76",
     "@azure/identity": "^4.5.0",
-    "@azure/storage-blob": "^12.25.0"
+    "@azure/storage-blob": "^12.25.0",
+    "ioredis": "^5.4.1"
   },
   "devDependencies": {
     "@react-email/preview-server": "^4.2.12",

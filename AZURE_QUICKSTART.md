@@ -9,6 +9,7 @@ This fork adds comprehensive Azure integration to Papermark:
 ✅ **Azure AD Authentication** - Sign in with Microsoft accounts
 ✅ **B2B Guest Users** - Support for external organization users
 ✅ **Azure Blob Storage** - Alternative to AWS S3
+✅ **Azure Cache for Redis** - Auto-detected, works seamlessly with App Services
 ✅ **Multi-tenant Support** - Link teams to Azure AD tenants
 ✅ **Managed Identity** - Secure, passwordless Azure resource access
 ✅ **Infrastructure as Code** - Bicep templates for easy deployment

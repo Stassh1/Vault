@@ -1,15 +1,14 @@
 import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
+import {
+  createRedisClient,
+  createLockerRedisClient,
+} from "@/lib/redis-adapter";
 
-export const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL as string,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN as string,
-});
+// Universal Redis client - works with both Upstash and Azure Cache for Redis
+export const redis = createRedisClient();
 
-export const lockerRedisClient = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_LOCKER_URL as string,
-  token: process.env.UPSTASH_REDIS_REST_LOCKER_TOKEN as string,
-});
+// Locker client for tus file uploads
+export const lockerRedisClient = createLockerRedisClient();
 
 // Create a new ratelimiter, that allows 10 requests per 10 seconds by default
 export const ratelimit = (

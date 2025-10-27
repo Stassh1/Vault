@@ -331,14 +331,18 @@ Estimated monthly costs for production workload:
 - App Service Plan (B2): ~$55/month
 - PostgreSQL (Standard_B2s): ~$40/month
 - Azure Blob Storage: ~$5-20/month (depending on usage)
-- Upstash Redis: ~$0-10/month (pay-as-you-go, use Upstash instead of Azure Cache)
-- **Total**: ~$100-125/month
+- Azure Cache for Redis (Basic C0): ~$16/month
+- **Total**: ~$116-131/month
 
-**Note on Redis**: Papermark uses Upstash Redis REST API. The Bicep template provisions Azure Cache for Redis, but we recommend using [Upstash](https://upstash.com) for better compatibility:
+**Redis Support**: Papermark now automatically detects and works with:
+- ✅ **Azure Cache for Redis** (deployed by Bicep template) - native protocol via ioredis
+- ✅ **Upstash Redis** (external service) - REST API
+
+The application auto-detects which Redis is configured and uses the appropriate client. No code changes needed!
+
+To verify Redis is working after deployment:
 ```bash
-# Set Upstash environment variables instead:
-UPSTASH_REDIS_REST_URL=your-upstash-url
-UPSTASH_REDIS_REST_TOKEN=your-upstash-token
+curl https://your-app.azurewebsites.net/api/health/redis
 ```
 
 Cost-saving tips:
