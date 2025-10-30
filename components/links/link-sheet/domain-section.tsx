@@ -41,7 +41,7 @@ export default function DomainSection({
 }) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isUpgradeModalOpen, setUpgradeModalOpen] = useState(false);
-  const [displayValue, setDisplayValue] = useState<string>("papermark.com");
+  const [displayValue, setDisplayValue] = useState<string>("datavault.com");
   const teamInfo = useTeam();
   const { limits } = useLimits();
 
@@ -55,7 +55,7 @@ export default function DomainSection({
 
   // Check if we're editing a link with a custom domain
   const isEditingCustomDomain =
-    editLink && data.domain && data.domain !== "papermark.com" ? true : false;
+    editLink && data.domain && data.domain !== "datavault.com" ? true : false;
 
   const handleDomainChange = (value: string) => {
     const canChangeCustomDomain =
@@ -64,28 +64,28 @@ export default function DomainSection({
         : canUseCustomDomainForDataroom;
 
     if (isEditingCustomDomain && !canChangeCustomDomain) {
-      setDisplayValue(data.domain ?? "papermark.com");
+      setDisplayValue(data.domain ?? "datavault.com");
       return;
     }
 
     // Handle opening the add domain modal
     if (value === "add_domain" || value === "add_dataroom_domain") {
       setModalOpen(true);
-      setData({ ...data, domain: "papermark.com" });
-      setDisplayValue("papermark.com");
+      setData({ ...data, domain: "datavault.com" });
+      setDisplayValue("datavault.com");
       return;
     }
 
-    // Check if this is a custom domain selection (not papermark.com)
-    if (value !== "papermark.com") {
+    // Check if this is a custom domain selection (not datavault.com)
+    if (value !== "datavault.com") {
       // Show upgrade modal if user doesn't have the right plan
       if (
         (linkType === "DOCUMENT_LINK" && !canUseCustomDomainForDocument) ||
         (linkType === "DATAROOM_LINK" && !canUseCustomDomainForDataroom)
       ) {
         setUpgradeModalOpen(true);
-        setData({ ...data, domain: "papermark.com" });
-        setDisplayValue("papermark.com");
+        setData({ ...data, domain: "datavault.com" });
+        setDisplayValue("datavault.com");
         return;
       }
     }
@@ -110,8 +110,8 @@ export default function DomainSection({
         (linkType === "DATAROOM_LINK" && canUseCustomDomainForDataroom);
 
       const domainValue = canUseCustomDomain
-        ? (defaultDomain?.slug ?? "papermark.com")
-        : "papermark.com";
+        ? (defaultDomain?.slug ?? "datavault.com")
+        : "datavault.com";
 
       setData({
         ...data,
@@ -132,11 +132,11 @@ export default function DomainSection({
 
   // Set defaultDomain based on plan type and link type
   const defaultDomain = editLink
-    ? (data.domain ?? "papermark.com")
+    ? (data.domain ?? "datavault.com")
     : (linkType === "DOCUMENT_LINK" && canUseCustomDomainForDocument) ||
         (linkType === "DATAROOM_LINK" && canUseCustomDomainForDataroom)
-      ? (domains?.find((domain) => domain.isDefault)?.slug ?? "papermark.com")
-      : "papermark.com";
+      ? (domains?.find((domain) => domain.isDefault)?.slug ?? "datavault.com")
+      : "datavault.com";
 
   // Set the initial display value when component mounts
   useEffect(() => {
@@ -164,7 +164,7 @@ export default function DomainSection({
           <SelectTrigger
             className={cn(
               "flex h-10 w-full rounded-none rounded-l-md border border-input bg-white text-foreground placeholder-muted-foreground focus:border-muted-foreground focus:outline-none focus:ring-inset focus:ring-muted-foreground dark:border-gray-500 dark:bg-gray-800 focus:dark:bg-transparent sm:text-sm",
-              data.domain && data.domain !== "papermark.com"
+              data.domain && data.domain !== "datavault.com"
                 ? ""
                 : "border-r-1 rounded-r-md",
             )}
@@ -172,8 +172,8 @@ export default function DomainSection({
             <SelectValue placeholder="Select a domain" />
           </SelectTrigger>
           <SelectContent className="flex w-full rounded-md border border-input bg-white text-foreground placeholder-muted-foreground focus:border-muted-foreground focus:outline-none focus:ring-inset focus:ring-muted-foreground dark:border-gray-500 dark:bg-gray-800 focus:dark:bg-transparent sm:text-sm">
-            <SelectItem value="papermark.com" className="hover:bg-muted">
-              papermark.com
+            <SelectItem value="datavault.com" className="hover:bg-muted">
+              datavault.com
             </SelectItem>
             {linkType === "DOCUMENT_LINK" && (
               <>
@@ -226,7 +226,7 @@ export default function DomainSection({
           </SelectContent>
         </Select>
 
-        {data.domain && data.domain !== "papermark.com" ? (
+        {data.domain && data.domain !== "datavault.com" ? (
           <Input
             type="text"
             name="key"
@@ -257,7 +257,7 @@ export default function DomainSection({
             autoComplete="off"
             className={cn(
               "hidden rounded-l-none focus:ring-inset",
-              data.domain && data.domain !== "papermark.com" ? "flex" : "",
+              data.domain && data.domain !== "datavault.com" ? "flex" : "",
               isDisabled ? "opacity-50" : "",
             )}
             placeholder="deck"
@@ -292,7 +292,7 @@ export default function DomainSection({
         </div>
       )}
 
-      {data.domain && data.domain !== "papermark.com" && !isDomainVerified ? (
+      {data.domain && data.domain !== "datavault.com" && !isDomainVerified ? (
         <div className="mt-4 text-sm text-red-500">
           Your domain is not verified yet!{" "}
           <Link

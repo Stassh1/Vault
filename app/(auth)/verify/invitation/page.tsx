@@ -13,20 +13,20 @@ import InvitationStatusContent from "./InvitationStatusContent";
 import CleanUrlOnExpire from "./status/ClientRedirect";
 
 const data = {
-  description: "Accept your team invitation on Papermark",
-  title: "Accept Invitation | Papermark",
+  description: "Accept your team invitation on Datavault",
+  title: "Accept Invitation | Datavault",
   url: "/verify/invitation",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.papermark.com"),
+  metadataBase: new URL("https://www.datavault.com"),
   title: data.title,
   description: data.description,
   openGraph: {
     title: data.title,
     description: data.description,
     url: data.url,
-    siteName: "Papermark",
+    siteName: "Datavault",
     images: [
       {
         url: "/_static/meta-image.png",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: data.title,
     description: data.description,
-    creator: "@papermarkio",
+    creator: "@datavaultio",
     images: ["/_static/meta-image.png"],
   },
 };
@@ -100,13 +100,13 @@ export default async function VerifyInvitationPage({
             <div className="flex flex-col items-center justify-center space-y-3 px-4 py-6 pt-8 text-center sm:px-16">
               <Link href="/">
                 <span className="text-balance text-2xl font-semibold text-gray-800">
-                  Welcome to Papermark
+                  Welcome to Datavault
                 </span>
               </Link>
               {!isExpired && !isRevoked && (
                 <>
                   <h3 className="text-balance py-1 text-sm font-normal text-gray-800">
-                    You&apos;ve been invited to join a team on Papermark
+                    You&apos;ve been invited to join a team on Datavault
                   </h3>
                   <div className="mt-2 flex w-auto items-center justify-center gap-2 rounded-full bg-gray-50 px-5 py-2.5 text-sm text-gray-600 shadow-sm">
                     <MailIcon className="h-4 w-4 text-gray-400" />
@@ -148,7 +148,7 @@ export default async function VerifyInvitationPage({
                 </div>
                 <p className="mt-10 w-full max-w-md px-4 text-xs text-muted-foreground sm:px-16">
                   By accepting this invitation, you acknowledge that you have
-                  read and agree to Papermark&apos;s{" "}
+                  read and agree to Datavault&apos;s{" "}
                   <a
                     href={`${process.env.NEXT_PUBLIC_MARKETING_URL}/terms`}
                     target="_blank"
@@ -191,7 +191,7 @@ export default async function VerifyInvitationPage({
                   <blockquote className="text-l text-balance leading-8 text-gray-100 sm:text-xl sm:leading-9">
                     <p>
                       True builders listen to their users and build what they
-                      need. Thanks Papermark team for solving a big pain point.
+                      need. Thanks Datavault team for solving a big pain point.
                       DocSend monopoly will end soon!
                     </p>
                   </blockquote>

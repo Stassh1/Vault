@@ -17,7 +17,7 @@ export const sendCustomDomainSetupEmail = async (
   try {
     await sendEmail({
       to: email,
-      subject: "Your Papermark custom domain set up",
+      subject: "Your Datavault custom domain set up",
       react: emailTemplate,
       test: process.env.NODE_ENV === "development",
     });

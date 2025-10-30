@@ -14,7 +14,7 @@ const DataroomTrialWelcomeEmail = ({ name }: WelcomeEmailProps) => {
         <Body className="font-sans text-sm">
           <Text>Hi{name && ` ${name}`},</Text>
           <Text>
-            I am Marc, founder of Papermark. Thanks for creating a trial. Do you
+            I am Marc, founder of Datavault. Thanks for creating a trial. Do you
             need any help with Data Rooms setup?
           </Text>
           <Text>Marc</Text>

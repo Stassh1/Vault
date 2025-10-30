@@ -22,8 +22,8 @@ export const sendSixMonthMilestoneEmail = async (
   try {
     await sendEmail({
       to: email as string,
-      subject: "6 months with Papermark",
-      from: "Marc Seitz <marc@papermark.com>",
+      subject: "6 months with Datavault",
+      from: "Marc Seitz <marc@datavault.com>",
       react: emailTemplate,
       test: process.env.NODE_ENV === "development",
       scheduledAt: sixAndHalfMonthsFromNow,

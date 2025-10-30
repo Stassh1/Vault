@@ -15,22 +15,22 @@ import {
 import { Footer } from "./shared/footer";
 
 const VerificationLinkEmail = ({
-  url = "https://www.papermark.com",
+  url = "https://www.datavault.com",
 }: {
   url: string;
 }) => {
   return (
     <Html>
       <Head />
-      <Preview>Login to your Papermark account with a link</Preview>
+      <Preview>Login to your Datavault account with a link</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
             <Text className="mx-0 mb-8 mt-4 p-0 text-center text-2xl font-normal">
-              <span className="font-bold tracking-tighter">Papermark</span>
+              <span className="font-bold tracking-tighter">Datavault</span>
             </Text>
             <Text className="mx-0 my-7 p-0 text-center text-xl font-semibold text-black">
-              Your Papermark Login Link
+              Your Datavault Login Link
             </Text>
 
             <Text className="text-sm leading-6 text-black">

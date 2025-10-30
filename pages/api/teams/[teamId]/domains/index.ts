@@ -84,11 +84,11 @@ export default async function handle(
         return res.status(422).json("Invalid domain");
       }
 
-      // Check if domain contains papermark
-      if (sanitizedDomain.toLowerCase().includes("papermark")) {
+      // Check if domain contains datavault
+      if (sanitizedDomain.toLowerCase().includes("datavault")) {
         return res
           .status(400)
-          .json({ message: "Domain cannot contain 'papermark'" });
+          .json({ message: "Domain cannot contain 'datavault'" });
       }
 
       // Check if domain already exists

@@ -35,7 +35,7 @@ export default function ViewedDocument({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 w-[465px] p-5">
             <Text className="mx-0 mb-8 mt-4 p-0 text-center text-2xl font-normal">
-              <span className="font-bold tracking-tighter">Papermark</span>
+              <span className="font-bold tracking-tighter">Datavault</span>
             </Text>
             <Text className="mx-0 my-7 p-0 text-center text-xl font-semibold text-black">
               New Document Visitor
@@ -57,12 +57,12 @@ export default function ViewedDocument({
             </Text>
             <Text className="text-sm leading-6 text-black">
               You can get the detailed engagement insights like time-spent per
-              page and total duration for this document on Papermark.
+              page and total duration for this document on Datavault.
             </Text>
             <Section className="my-8 text-center">
               <Button
                 className="rounded bg-black text-center text-xs font-semibold text-white no-underline"
-                href={`https://app.papermark.com/documents/${documentId}`}
+                href={`https://app.datavault.com/documents/${documentId}`}
                 style={{ padding: "12px 20px" }}
               >
                 See my document insights

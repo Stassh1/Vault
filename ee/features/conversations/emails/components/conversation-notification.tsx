@@ -34,7 +34,7 @@ export default function ConversationNotification({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 w-[465px] p-5">
             <Text className="mx-0 mb-8 mt-4 p-0 text-center text-2xl font-normal">
-              <span className="font-bold tracking-tighter">Papermark</span>
+              <span className="font-bold tracking-tighter">Datavault</span>
             </Text>
             <Text className="font-seminbold mx-0 mb-8 mt-4 p-0 text-center text-xl">
               {`New message in ${dataroomName}`}
@@ -43,7 +43,7 @@ export default function ConversationNotification({
               A new message has been added to the conversation{" "}
               <span className="font-semibold">{conversationTitle}</span> in the
               dataroom <span className="font-semibold">{dataroomName}</span> on
-              Papermark.
+              Datavault.
             </Text>
             <Section className="mb-[32px] mt-[32px] text-center">
               <Button
@@ -58,11 +58,11 @@ export default function ConversationNotification({
               or copy and paste this URL into your browser: <br />
               {`${url}`}
             </Text>
-            <Text className="text-sm text-gray-400">Papermark</Text>
+            <Text className="text-sm text-gray-400">Datavault</Text>
             <Hr />
             <Section className="mt-8 text-gray-400">
               <Text className="text-xs">
-                © {new Date().getFullYear()} Papermark, Inc.
+                © {new Date().getFullYear()} Datavault, Inc.
               </Text>
               <Text className="text-xs">
                 You received this email from{" "}
@@ -71,7 +71,7 @@ export default function ConversationNotification({
                 <span className="font-semibold">{conversationTitle}</span> in
                 the dataroom{" "}
                 <span className="font-semibold">{dataroomName}</span> on
-                Papermark. If you have any feedback or questions about this
+                Datavault. If you have any feedback or questions about this
                 email, simply reply to it. To unsubscribe from updates about
                 this dataroom,{" "}
                 <a

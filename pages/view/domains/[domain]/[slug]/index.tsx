@@ -273,7 +273,7 @@ export default function ViewPage({
     // Retrieve token from cookie on component mount
     const cookieToken =
       Cookies.get("pm_vft") || Cookies.get(`pm_drs_flag_${router.query.slug}`);
-    const storedEmail = window.localStorage.getItem("papermark.email");
+    const storedEmail = window.localStorage.getItem("datavault.email");
     if (cookieToken) {
       setStoredToken(cookieToken);
       if (storedEmail) {
@@ -318,7 +318,7 @@ export default function ViewPage({
             favicon={meta.metaFavicon}
             enableBranding={meta.enableCustomMetatag ?? false}
             title={
-              meta.metaTitle ?? `${link?.document?.name} | Powered by Papermark`
+              meta.metaTitle ?? `${link?.document?.name} | Powered by Datavault`
             }
             description={meta.metaDescription ?? null}
             imageUrl={meta.metaImage ?? null}
@@ -361,7 +361,7 @@ export default function ViewPage({
           favicon={meta.metaFavicon}
           enableBranding={meta.enableCustomMetatag ?? false}
           title={
-            meta.metaTitle ?? `${link?.document?.name} | Powered by Papermark`
+            meta.metaTitle ?? `${link?.document?.name} | Powered by Datavault`
           }
           description={meta.metaDescription ?? null}
           imageUrl={meta.metaImage ?? null}
@@ -396,7 +396,7 @@ export default function ViewPage({
             favicon={meta.metaFavicon}
             enableBranding={meta.enableCustomMetatag ?? false}
             title={
-              meta.metaTitle ?? `${link?.dataroom?.name} | Powered by Papermark`
+              meta.metaTitle ?? `${link?.dataroom?.name} | Powered by Datavault`
             }
             description={meta.metaDescription ?? null}
             imageUrl={meta.metaImage ?? null}
@@ -440,7 +440,7 @@ export default function ViewPage({
           favicon={meta.metaFavicon}
           enableBranding={meta.enableCustomMetatag ?? false}
           title={
-            meta.metaTitle ?? `${link?.dataroom?.name} | Powered by Papermark`
+            meta.metaTitle ?? `${link?.dataroom?.name} | Powered by Datavault`
           }
           description={meta.metaDescription ?? null}
           imageUrl={meta.metaImage ?? null}

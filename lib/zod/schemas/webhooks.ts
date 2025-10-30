@@ -39,7 +39,7 @@ const linkEventSchema = z.object({
   url: z
     .string()
     .describe(
-      "This is the full URL of the link e.g. https://www.papermark.com/view/1234566",
+      "This is the full URL of the link e.g. https://www.datavault.com/view/1234566",
     ),
   name: z.string().nullable(),
   domain: z.string(),
@@ -161,5 +161,5 @@ export const webhookCallbackSchema = z.object({
   createdAt: z.number(),
   sourceMessageId: z.string(),
   body: z.string().optional().default(""), // Response from the original webhook URL
-  sourceBody: z.string(), // Original request payload from Papermark
+  sourceBody: z.string(), // Original request payload from Datavault
 });

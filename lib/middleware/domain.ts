@@ -6,7 +6,7 @@ export default async function DomainMiddleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
   const host = req.headers.get("host");
 
-  // If it's the root path, redirect to papermark.com/home
+  // If it's the root path, redirect to datavault.com/home
   if (path === "/") {
     if (host === "guide.permithealth.com") {
       return NextResponse.redirect(
@@ -33,7 +33,7 @@ export default async function DomainMiddleware(req: NextRequest) {
     }
 
     return NextResponse.redirect(
-      new URL("https://www.papermark.com/home", req.url),
+      new URL("https://www.datavault.com/home", req.url),
     );
   }
 
@@ -53,7 +53,7 @@ export default async function DomainMiddleware(req: NextRequest) {
     headers: {
       "X-Robots-Tag": "noindex",
       "X-Powered-By":
-        "Papermark - Secure Data Room Infrastructure for the modern web",
+        "Datavault - Secure Data Room Infrastructure for the modern web",
     },
   });
 }

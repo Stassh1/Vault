@@ -3,7 +3,7 @@ import { type Message } from "ai";
 import { Separator } from "@/components/ui/separator";
 
 import Skeleton from "../Skeleton";
-import PapermarkSparkle from "../shared/icons/papermark-sparkle";
+import DatavaultSparkle from "../shared/icons/datavault-sparkle";
 import { ChatMessage } from "./chat-message";
 
 export interface ChatList {
@@ -34,11 +34,11 @@ export function ChatList({ messages, status }: ChatList) {
             className="group relative mb-4 ml-5 flex items-start whitespace-pre-wrap"
           >
             <div className="flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border bg-primary text-primary-foreground shadow">
-              <PapermarkSparkle />
+              <DatavaultSparkle />
             </div>
             <div className="ml-4 flex-1 space-y-2 overflow-hidden px-1">
               <div className="select-none font-semibold">
-                Papermark Assistant
+                Datavault Assistant
               </div>
               <Skeleton className="h-4 w-64" />
               <Skeleton className="h-4 w-48" />

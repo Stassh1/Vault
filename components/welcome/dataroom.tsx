@@ -31,7 +31,7 @@ export default function Dataroom() {
         className="flex flex-col items-center space-y-10 text-center"
       >
         <p className="text-2xl font-bold tracking-tighter text-foreground">
-          Papermark
+          Datavault
         </p>
         <h1 className="font-display max-w-xl text-3xl font-semibold transition-colors sm:text-4xl">
           Get started with data rooms!
@@ -53,7 +53,7 @@ export default function Dataroom() {
           controls
         >
           <source
-            src="https://assets.papermark.io/upload/file_A4qNV68jr3MAUayMNi3WmY-Data-Room-demo-2.mp4"
+            src="https://assets.datavault.io/upload/file_A4qNV68jr3MAUayMNi3WmY-Data-Room-demo-2.mp4"
             type="video/mp4"
           />
         </video>

@@ -32,13 +32,13 @@ const WelcomeEmail = ({ name }: WelcomeEmailProps) => {
           <Container className="mx-auto my-10 w-[465px] p-5">
             <Text className="mx-0 mb-8 mt-4 p-0 text-center text-2xl font-normal">
               Welcome to{" "}
-              <span className="font-bold tracking-tighter">Papermark</span>
+              <span className="font-bold tracking-tighter">Datavault</span>
             </Text>
             <Text className="text-sm">
               Thanks for signing up{name && `, ${name}`}!
             </Text>
             <Text className="text-sm">
-              My name is Marc, and I&apos;m the founder of Papermark – the
+              My name is Marc, and I&apos;m the founder of Datavault – the
               secure way to share documents and data rooms. I&apos;m excited to
               have you on board!
             </Text>
@@ -69,7 +69,7 @@ const WelcomeEmail = ({ name }: WelcomeEmailProps) => {
                 If you have any questions or feedback just respond to this
                 email.{" "}
                 <Link
-                  href="https://cal.link/papermark"
+                  href="https://cal.link/datavault"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -78,19 +78,19 @@ const WelcomeEmail = ({ name }: WelcomeEmailProps) => {
                 to discuss your enterprise needs. I&apos;m always happy to help!
               </Text>
 
-              <Text className="text-sm text-gray-400">Marc from Papermark</Text>
+              <Text className="text-sm text-gray-400">Marc from Datavault</Text>
             </Section>
             <Footer />
             <Text className="flex gap-x-1 text-xs">
               <Link
-                href="https://www.papermark.com/customers"
+                href="https://www.datavault.com/customers"
                 target="_blank"
                 className="text-xs text-gray-400"
               >
                 Customer stories
               </Link>
               <Link
-                href="https://x.com/papermarkio"
+                href="https://x.com/datavaultio"
                 target="_blank"
                 className="text-xs text-gray-400"
                 rel="noopener noreferrer"
@@ -98,7 +98,7 @@ const WelcomeEmail = ({ name }: WelcomeEmailProps) => {
                 · X/Twitter
               </Link>
               <Link
-                href="https://www.linkedin.com/company/papermarkio"
+                href="https://www.linkedin.com/company/datavaultio"
                 target="_blank"
                 className="text-xs text-gray-400"
                 rel="noopener noreferrer"

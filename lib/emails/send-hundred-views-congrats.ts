@@ -10,7 +10,7 @@ export const sendHundredViewsCongratsEmail = async (params: CreateUserEmailProps
   try {
     await sendEmail({
       to: email as string,
-      subject: `100 views on Papermark. Awesome, ${name}`,
+      subject: `100 views on Datavault. Awesome, ${name}`,
       react: emailTemplate,
       test: process.env.NODE_ENV === "development",
     });

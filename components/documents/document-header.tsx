@@ -39,7 +39,7 @@ import { fileIcon } from "@/lib/utils/get-file-icon";
 
 import FileUp from "@/components/shared/icons/file-up";
 import MoreVertical from "@/components/shared/icons/more-vertical";
-import PapermarkSparkle from "@/components/shared/icons/papermark-sparkle";
+import DatavaultSparkle from "@/components/shared/icons/datavault-sparkle";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -220,7 +220,7 @@ export default function DocumentHeader({
         }),
         {
           loading: "Activating Assistant...",
-          success: "Papermark Assistant successfully activated.",
+          success: "Datavault Assistant successfully activated.",
           error: "Activation failed. Please try again.",
         },
       );
@@ -246,7 +246,7 @@ export default function DocumentHeader({
 
     toast.promise(fetchPromise, {
       loading: `${active ? "Activating" : "Deactivating"} Assistant...`,
-      success: `Papermark Assistant successfully ${active ? "activated" : "deactivated"}.`,
+      success: `Datavault Assistant successfully ${active ? "activated" : "deactivated"}.`,
       error: `${active ? "Activation" : "Deactivation"} failed. Please try again.`,
     });
   };
@@ -600,7 +600,7 @@ export default function DocumentHeader({
                 onClick={() => activateOrRedirectAssistant(prismaDocument)}
                 title="Open AI Assistant"
               >
-                <PapermarkSparkle className="h-5 w-5" />
+                <DatavaultSparkle className="h-5 w-5" />
               </Button>
             )} */}
 
@@ -679,7 +679,7 @@ export default function DocumentHeader({
                           activateOrRedirectAssistant(prismaDocument)
                         }
                       >
-                        <PapermarkSparkle className="mr-2 h-4 w-4" />
+                        <DatavaultSparkle className="mr-2 h-4 w-4" />
                         Open AI Assistant
                       </DropdownMenuItem>
                     </>

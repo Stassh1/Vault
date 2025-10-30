@@ -127,7 +127,7 @@ model LinkPreset {
   enableCustomFields Boolean? @default(false)
   customFields       Json? //[{type: "SHORT_TEXT", identifier: "name", label: "Name", required: true}]
 
-  showBanner Boolean? @default(false) // Optional give user a option to show the "Powered by Papermark" banner
+  showBanner Boolean? @default(false) // Optional give user a option to show the "Powered by Datavault" banner
 
   isDefault Boolean @default(false)
 

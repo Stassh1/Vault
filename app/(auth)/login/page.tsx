@@ -5,20 +5,20 @@ import { GTMComponent } from "@/components/gtm-component";
 import LoginClient from "./page-client";
 
 const data = {
-  description: "Login to Papermark",
-  title: "Login | Papermark",
+  description: "Login to Datavault",
+  title: "Login | Datavault",
   url: "/login",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.papermark.com"),
+  metadataBase: new URL("https://www.datavault.com"),
   title: data.title,
   description: data.description,
   openGraph: {
     title: data.title,
     description: data.description,
     url: data.url,
-    siteName: "Papermark",
+    siteName: "Datavault",
     images: [
       {
         url: "/_static/meta-image.png",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: data.title,
     description: data.description,
-    creator: "@papermarkio",
+    creator: "@datavaultio",
     images: ["/_static/meta-image.png"],
   },
 };

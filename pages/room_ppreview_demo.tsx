@@ -4,7 +4,7 @@ import { ViewFolderTree } from "@/components/datarooms/folders";
 import DocumentCard from "@/components/view/dataroom/document-card";
 import FolderCard from "@/components/view/dataroom/folder-card";
 
-const DEFAULT_BANNER_IMAGE = "/_static/papermark-banner.png";
+const DEFAULT_BANNER_IMAGE = "/_static/datavault-banner.png";
 
 export default function ViewPage() {
   const router = useRouter();
@@ -35,7 +35,7 @@ export default function ViewPage() {
                   />
                 ) : (
                   <div className="text-2xl font-bold tracking-tighter text-white">
-                    Papermark
+                    Datavault
                   </div>
                 )}
               </div>

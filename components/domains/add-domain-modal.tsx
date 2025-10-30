@@ -51,9 +51,9 @@ export function AddDomainModal({
       .min(3, {
         message: "Please provide a domain name with at least 3 characters.",
       })
-      // Add validation for papermark
-      .refine((name) => !name.toLowerCase().includes("papermark"), {
-        message: "Domain cannot contain 'papermark'",
+      // Add validation for datavault
+      .refine((name) => !name.toLowerCase().includes("datavault"), {
+        message: "Domain cannot contain 'datavault'",
       }),
   });
 

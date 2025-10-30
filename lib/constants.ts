@@ -14,10 +14,10 @@ export const STAGGER_CHILD_VARIANTS = {
   },
 };
 
-export const PAPERMARK_HEADERS = {
+export const DATAVAULT_HEADERS = {
   headers: {
     "x-powered-by":
-      "Papermark - Secure Data Room Infrastructure for the modern web",
+      "Datavault - Secure Data Room Infrastructure for the modern web",
   },
 };
 

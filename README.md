@@ -1,26 +1,26 @@
 <div align="center">
-  <h1 align="center">Papermark</h1>
+  <h1 align="center">Datavault</h1>
   <h3>The open-source DocSend alternative.</h3>
 
-<a target="_blank" href="https://www.producthunt.com/posts/papermark-3?utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_souce=badge-papermark"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=411605&amp;theme=light&amp;period=daily" alt="Papermark - The open-source DocSend alternative | Product Hunt" style="width:250px;height:40px"></a>
+<a target="_blank" href="https://www.producthunt.com/posts/datavault-3?utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_souce=badge-datavault"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=411605&amp;theme=light&amp;period=daily" alt="Datavault - The open-source DocSend alternative | Product Hunt" style="width:250px;height:40px"></a>
 
 </div>
 
 <div align="center">
-  <a href="https://www.papermark.com">papermark.com</a>
+  <a href="https://www.datavault.com">datavault.com</a>
 </div>
 
 <br/>
 
 <div align="center">
-  <a href="https://github.com/mfts/papermark/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mfts/papermark"></a>
-  <a href="https://twitter.com/papermarkio"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/papermarkio"></a>
-  <a href="https://github.com/mfts/papermark/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPLv3-purple"></a>
+  <a href="https://github.com/mfts/datavault/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mfts/datavault"></a>
+  <a href="https://twitter.com/datavaultio"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/datavaultio"></a>
+  <a href="https://github.com/mfts/datavault/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPLv3-purple"></a>
 </div>
 
 <br/>
 
-Papermark is the open-source document-sharing alternative to DocSend, featuring built-in analytics and custom domains.
+Datavault is the open-source document-sharing alternative to DocSend, featuring built-in analytics and custom domains.
 
 ## Features
 
@@ -31,7 +31,7 @@ Papermark is the open-source document-sharing alternative to DocSend, featuring 
 
 ## Demo
 
-![Papermark Welcome GIF](.github/images/papermark-welcome.gif)
+![Datavault Welcome GIF](.github/images/datavault-welcome.gif)
 
 ## Tech Stack
 
@@ -51,7 +51,7 @@ Papermark is the open-source document-sharing alternative to DocSend, featuring 
 
 ### Prerequisites
 
-Here's what you need to run Papermark:
+Here's what you need to run Datavault:
 
 - Node.js (version >= 18.17.0)
 - PostgreSQL Database
@@ -61,8 +61,8 @@ Here's what you need to run Papermark:
 ### 1. Clone the repository
 
 ```shell
-git clone https://github.com/mfts/papermark.git
-cd papermark
+git clone https://github.com/mfts/datavault.git
+cd datavault
 ```
 
 ### 2. Install npm dependencies
@@ -119,19 +119,19 @@ To prepare the Tinybird database, follow these steps:
 pipenv shell
 ## start: pkgx-specific
 cd ..
-cd papermark
+cd datavault
 ## end: pkgx-specific
 pipenv update tinybird-cli
 ```
 
 ## Contributing
 
-Papermark is an open-source project, and we welcome contributions from the community.
+Datavault is an open-source project, and we welcome contributions from the community.
 
 If you'd like to contribute, please fork the repository and make any changes you'd like. Pull requests are warmly welcome.
 
 ### Our Contributors ✨
 
-<a href="https://github.com/mfts/papermark/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=mfts/papermark" />
+<a href="https://github.com/mfts/datavault/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mfts/datavault" />
 </a>

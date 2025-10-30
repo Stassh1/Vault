@@ -12,7 +12,7 @@ export const Footer = ({
       <Hr />
       <Section className="text-gray-400">
         <Text className="text-xs">
-          © {new Date().getFullYear()} Papermark, Inc. All rights reserved.{" "}
+          © {new Date().getFullYear()} Datavault, Inc. All rights reserved.{" "}
           {withAddress && (
             <>
               <br />

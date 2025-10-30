@@ -226,8 +226,8 @@ export default async function handle(
 
     let { domain, slug, ...linkData } = linkDomainData;
 
-    // set domain and slug to null if the domain is papermark.com
-    if (domain && domain === "papermark.com") {
+    // set domain and slug to null if the domain is datavault.com
+    if (domain && domain === "datavault.com") {
       domain = null;
       slug = null;
     }

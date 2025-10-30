@@ -3,7 +3,7 @@ import { type Message } from "ai";
 import { cn } from "@/lib/utils";
 
 import AlertCircle from "../shared/icons/alert-circle";
-import PapermarkSparkle from "../shared/icons/papermark-sparkle";
+import DatavaultSparkle from "../shared/icons/datavault-sparkle";
 import UserRound from "../shared/icons/user-round";
 import { ChatMessageActions } from "./chat-message-actions";
 
@@ -11,10 +11,10 @@ import { ChatMessageActions } from "./chat-message-actions";
 const mapMessageRole = {
   user: { icon: <UserRound />, name: "You" },
   system: { icon: <AlertCircle />, name: "System" },
-  assistant: { icon: <PapermarkSparkle />, name: "Papermark Assistant" },
-  function: { icon: <PapermarkSparkle />, name: "Papermark Assistant" },
-  data: { icon: <PapermarkSparkle />, name: "Papermark Assistant" },
-  tool: { icon: <PapermarkSparkle />, name: "Papermark Assistant" },
+  assistant: { icon: <DatavaultSparkle />, name: "Datavault Assistant" },
+  function: { icon: <DatavaultSparkle />, name: "Datavault Assistant" },
+  data: { icon: <DatavaultSparkle />, name: "Datavault Assistant" },
+  tool: { icon: <DatavaultSparkle />, name: "Datavault Assistant" },
 };
 
 export interface ChatMessageProps {

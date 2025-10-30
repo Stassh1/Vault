@@ -251,7 +251,7 @@ export function UpgradePlanModal({
                 <div className="mb-4 border-b border-gray-200 pb-2">
                   <div className="flex items-center justify-between">
                     <h3 className="text-balance text-xl font-medium text-gray-900 dark:text-white">
-                      Papermark {displayPlanName}
+                      Datavault {displayPlanName}
                     </h3>
                   </div>
                   <span

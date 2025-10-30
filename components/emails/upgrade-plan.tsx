@@ -72,17 +72,17 @@ const UpgradePlanEmail = ({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 w-[465px] p-5">
             <Text className="mx-0 mb-8 mt-4 p-0 text-center text-2xl font-normal">
-              <span className="font-bold tracking-tighter">Papermark</span>
+              <span className="font-bold tracking-tighter">Datavault</span>
             </Text>
             <Text className="font-seminbold mx-0 mb-8 mt-4 p-0 text-center text-xl">
-              Thanks for upgrading to Papermark {planTypeText}!
+              Thanks for upgrading to Datavault {planTypeText}!
             </Text>
             <Text className="text-sm leading-6 text-black">
               Hey{name && ` ${name}`}!
             </Text>
             <Text className="text-sm">
               Marc is here. I wanted to personally reach out to thank you for
-              upgrading to Papermark {planTypeText}!
+              upgrading to Datavault {planTypeText}!
             </Text>
 
             <Text className="text-sm leading-6 text-black">
@@ -113,7 +113,7 @@ const UpgradePlanEmail = ({
                 Let me know if you have any questions or feedback. I&apos;m
                 always happy to help!
               </Text>
-              <Text className="text-sm text-gray-400">Marc from Papermark</Text>
+              <Text className="text-sm text-gray-400">Marc from Datavault</Text>
             </Section>
             <Footer />
           </Container>

@@ -138,7 +138,7 @@ export default function UpgradePage() {
             >
               <div className="mb-4 border-b border-gray-200 pb-2">
                 <h3 className="text-balance text-xl font-medium text-foreground text-gray-900 dark:text-white">
-                  Papermark {planOption}
+                  Datavault {planOption}
                 </h3>
                 {(planOption === PlanEnum.Business ||
                   planOption === PlanEnum.DataRoomsPlus) && (
@@ -274,11 +274,11 @@ export default function UpgradePage() {
           analytics.
         </a>
         <a
-          href="https://cal.com/marcseitz/papermark"
+          href="https://cal.com/marcseitz/datavault"
           target="_blank"
           className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
         >
-          Looking for Papermark Enterprise?
+          Looking for Datavault Enterprise?
         </a>
       </div>
     </div>

@@ -48,7 +48,7 @@ export default async function handle(
             messages: [
               {
                 role: "user",
-                content: "Initializing chat with Papermark Assistant",
+                content: "Initializing chat with Datavault Assistant",
                 file_ids: [documentVersion?.fileId || ""],
                 metadata: { intitialMessage: true },
               },

@@ -152,7 +152,7 @@ function Nav({ documentId }: { documentId: string }) {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center gap-x-2">
               <p className="text-2xl font-bold tracking-tighter text-white">
-                Papermark
+                Datavault
               </p>
               <Sparkle className="h-5 w-5 text-white" />
             </div>

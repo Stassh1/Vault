@@ -21,13 +21,13 @@ const HundredViewsCongratsEmail = ({
         <Body className="font-sans text-sm">
           <Text>Hi{name && ` ${name}`},</Text>
           <Text>
-            I&apos;m Marc, founder of Papermark. Congrats on 100 views on your
+            I&apos;m Marc, founder of Datavault. Congrats on 100 views on your
             documents.
           </Text>
           <Text>Would you help others discover us too?</Text>
           <Text>
             <Link
-              href="https://www.g2.com/products/papermark/reviews"
+              href="https://www.g2.com/products/datavault/reviews"
               target="_blank"
               className="text-blue-500 underline"
             >

@@ -27,7 +27,7 @@ export default function ViewPage() {
                   <img className="object-contain" src={brandLogo} alt="Logo" />
                 ) : (
                   <div className="text-2xl font-bold tracking-tighter text-white">
-                    Papermark
+                    Datavault
                   </div>
                 )}
               </div>
@@ -71,7 +71,7 @@ export default function ViewPage() {
         <div className="relative mx-auto flex h-full w-full justify-center">
           <img
             className="mx-auto block object-contain"
-            src={"/_example/papermark-example-page.png"}
+            src={"/_example/datavault-example-page.png"}
             alt={`Demo Page 1`}
           />
         </div>

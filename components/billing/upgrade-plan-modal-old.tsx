@@ -53,7 +53,7 @@ export function UpgradePlanModal({
         "Custom branding",
         "Folder organization",
         "Require email verification",
-        "Papermark branding removed",
+        "Datavault branding removed",
         "1-year analytics retention",
       ];
     }
@@ -287,11 +287,11 @@ export function UpgradePlanModal({
               </DataroomTrialModal>
             ) : (
               <a
-                href="https://cal.com/marcseitz/papermark"
+                href="https://cal.com/marcseitz/datavault"
                 target="_blank"
                 className="underline-offset-4 transition-all hover:text-gray-800 hover:underline hover:dark:text-muted-foreground/80"
               >
-                Looking for Papermark Enterprise?
+                Looking for Datavault Enterprise?
               </a>
             )}
           </div>

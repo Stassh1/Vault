@@ -43,7 +43,7 @@ export default function OtpEmailVerification({
                 />
               ) : (
                 <Text className="text-2xl font-normal">
-                  <span className="font-bold tracking-tighter">Papermark</span>
+                  <span className="font-bold tracking-tighter">Datavault</span>
                 </Text>
               )}
             </div>

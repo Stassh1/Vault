@@ -64,7 +64,7 @@ export function EmptyScreen({
               <p className="text-center text-2xl">
                 Chat with{" "}
                 <span className="text-2xl font-bold tracking-tighter ">
-                  Papermark
+                  Datavault
                 </span>
                 &apos;s pitchdeck
               </p>

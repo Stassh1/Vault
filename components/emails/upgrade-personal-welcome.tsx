@@ -26,7 +26,7 @@ const UpgradePersonalEmail = ({
         <Body className="font-sans text-sm">
           <Text>Hi{name && ` ${name}`},</Text>
           <Text>
-            I&apos;m Iuliia, co-founder of Papermark. Thanks for upgrading!
+            I&apos;m Iuliia, co-founder of Datavault. Thanks for upgrading!
             I&apos;m thrilled to have you on our {planName} plan.
           </Text>
           <Text>

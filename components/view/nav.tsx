@@ -33,7 +33,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import PapermarkSparkle from "../shared/icons/papermark-sparkle";
+import DatavaultSparkle from "../shared/icons/datavault-sparkle";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -237,11 +237,11 @@ export default function Nav({
                 />
               ) : (
                 <Link
-                  href={`https://www.papermark.com/home?utm_campaign=navbar&utm_medium=navbar&utm_source=papermark-${linkId}`}
+                  href={`https://www.datavault.com/home?utm_campaign=navbar&utm_medium=navbar&utm_source=datavault-${linkId}`}
                   target="_blank"
                   className="text-2xl font-bold tracking-tighter text-white"
                 >
-                  Papermark
+                  Datavault
                 </Link>
               )}
             </div>
@@ -356,7 +356,7 @@ export default function Nav({
                   }}
                   title="Open AI Document Assistant"
                 >
-                  <PapermarkSparkle className="h-5 w-5" />
+                  <DatavaultSparkle className="h-5 w-5" />
                 </Button>
               </Link>
             ) : null}

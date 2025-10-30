@@ -65,7 +65,7 @@ export default function DataroomDocumentViewPage({
   useEffect(() => {
     // Retrieve token from cookie on component mount
     const cookieToken = Cookies.get(`pm_drs_flag_${router.query.linkId}`);
-    const storedEmail = window.localStorage.getItem("papermark.email");
+    const storedEmail = window.localStorage.getItem("datavault.email");
     if (cookieToken) {
       setStoredToken(cookieToken);
       if (storedEmail) {
@@ -104,7 +104,7 @@ export default function DataroomDocumentViewPage({
           enableBranding={meta.enableCustomMetatag ?? false}
           title={
             meta.metaTitle ??
-            `${link?.dataroomDocument?.document?.name} | Powered by Papermark`
+            `${link?.dataroomDocument?.document?.name} | Powered by Datavault`
           }
           description={meta.metaDescription ?? null}
           imageUrl={meta.metaImage ?? null}
@@ -149,7 +149,7 @@ export default function DataroomDocumentViewPage({
         enableBranding={meta.enableCustomMetatag ?? false}
         title={
           meta.metaTitle ??
-          `${link?.dataroomDocument?.document?.name} | Powered by Papermark`
+          `${link?.dataroomDocument?.document?.name} | Powered by Datavault`
         }
         description={meta.metaDescription ?? null}
         imageUrl={meta.metaImage ?? null}
@@ -254,7 +254,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
           metaDescription: link.metaDescription,
           metaImage: link.metaImage,
           metaFavicon: link.metaFavicon ?? "/favicon.ico",
-          metaUrl: `https://www.papermark.com/view/${linkId}`,
+          metaUrl: `https://www.datavault.com/view/${linkId}`,
         },
         showPoweredByBanner: false,
         showAccountCreationSlide: false,

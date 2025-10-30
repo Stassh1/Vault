@@ -25,14 +25,14 @@ const DataRoomsInformationEmail = () => {
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 w-[465px] p-5">
             <Text className="mx-0 mb-8 mt-4 p-0 text-center text-2xl font-normal">
-              <span className="font-bold tracking-tighter">Papermark</span>
+              <span className="font-bold tracking-tighter">Datavault</span>
             </Text>
             <Text className="mx-0 mb-8 mt-4 p-0 text-center text-2xl font-normal">
               Virtual Data Rooms
             </Text>
             <Text className="text-sm">Unlimited branded data rooms!</Text>
             <Text className="text-sm">
-              With Papermark Data Rooms plan you can:
+              With Datavault Data Rooms plan you can:
             </Text>
             <ul className="list-inside list-disc text-sm">
               <li>Share data rooms with one link</li>
@@ -45,9 +45,9 @@ const DataRoomsInformationEmail = () => {
               <li>Use advanced link settings</li>
             </ul>
             <Text className="text-sm">
-              All about Papermark{" "}
+              All about Datavault{" "}
               <a
-                href="https://www.papermark.com/data-room"
+                href="https://www.datavault.com/data-room"
                 className="text-blue-500 underline"
               >
                 Data Rooms
@@ -57,7 +57,7 @@ const DataRoomsInformationEmail = () => {
             <Section className="my-8 text-center">
               <Button
                 className="rounded bg-black text-center text-xs font-semibold text-white no-underline"
-                href={`https://app.papermark.com/datarooms?utm_source=dataroom-info&utm_medium=email&utm_campaign=20240723&utm_content=upload_documents`}
+                href={`https://app.datavault.com/datarooms?utm_source=dataroom-info&utm_medium=email&utm_campaign=20240723&utm_content=upload_documents`}
                 style={{ padding: "12px 20px" }}
               >
                 Create new data room
@@ -66,7 +66,7 @@ const DataRoomsInformationEmail = () => {
             <Text className="text-sm">
               If you require a fully customizable experience,{" "}
               <a
-                href="https://cal.com/marcseitz/papermark"
+                href="https://cal.com/marcseitz/datavault"
                 className="text-blue-500 underline"
               >
                 book a call

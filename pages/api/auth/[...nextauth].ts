@@ -27,7 +27,7 @@ function getMainDomainUrl(): string {
   if (process.env.NODE_ENV === "development") {
     return process.env.NEXTAUTH_URL || "http://localhost:3000";
   }
-  return process.env.NEXTAUTH_URL || "https://app.papermark.com";
+  return process.env.NEXTAUTH_URL || "https://app.datavault.com";
 }
 
 // This function can run for a maximum of 180 seconds
@@ -122,7 +122,7 @@ export const authOptions: NextAuthOptions = {
         sameSite: "lax",
         path: "/",
         // When working on localhost, the cookie domain must be omitted entirely (https://stackoverflow.com/a/1188145)
-        domain: VERCEL_DEPLOYMENT ? ".papermark.com" : undefined,
+        domain: VERCEL_DEPLOYMENT ? ".datavault.com" : undefined,
         secure: VERCEL_DEPLOYMENT,
       },
     },
