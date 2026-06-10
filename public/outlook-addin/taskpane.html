@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send From Alias</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+  <script src="https://alcdn.msauth.net/browser/3.28.1/js/msal-browser.min.js" type="text/javascript"></script>
+  <script src="config.js" type="text/javascript"></script>
+  <script src="taskpane.js" type="text/javascript" defer></script>
+  <style>
+    :root {
+      --indigo: #4f46e5;
+      --indigo-dark: #4338ca;
+      --gray: #6b7280;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      color: #111827;
+      margin: 0;
+      padding: 16px;
+      background: #fff;
+    }
+    h1 { font-size: 16px; margin: 0 0 4px; }
+    p.sub { color: var(--gray); margin: 0 0 16px; font-size: 12.5px; }
+    #alias-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+    .alias-option {
+      display: flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 10px; cursor: pointer; word-break: break-all;
+    }
+    .alias-option:hover { border-color: var(--indigo); }
+    .alias-option input { margin: 0; flex-shrink: 0; }
+    .alias-option .tag {
+      margin-left: auto; flex-shrink: 0; font-size: 11px; color: var(--gray);
+      background: #f3f4f6; border-radius: 6px; padding: 1px 6px;
+    }
+    button {
+      font: inherit; border-radius: 8px; padding: 8px 12px; cursor: pointer;
+      border: 1px solid var(--border); background: #fff; width: 100%;
+    }
+    button.primary {
+      background: var(--indigo); border-color: var(--indigo); color: #fff; font-weight: 600;
+    }
+    button.primary:hover:enabled { background: var(--indigo-dark); }
+    button:disabled { opacity: 0.5; cursor: default; }
+    .actions { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    #status { font-size: 12.5px; min-height: 18px; margin-bottom: 12px; white-space: pre-wrap; }
+    #status.error { color: #b91c1c; }
+    #status.ok { color: #047857; }
+    details { margin-top: 8px; }
+    summary { cursor: pointer; color: var(--gray); font-size: 12.5px; }
+    .manual-row { display: flex; gap: 6px; margin-top: 8px; }
+    .manual-row input {
+      flex: 1; font: inherit; border: 1px solid var(--border);
+      border-radius: 8px; padding: 7px 10px; min-width: 0;
+    }
+    .manual-row button { width: auto; }
+    .hint { font-size: 12px; color: var(--gray); margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Send From Alias</h1>
+  <p class="sub">Choose which address this message is sent from.</p>
+
+  <div id="alias-list"><em style="color:var(--gray)">Loading aliases…</em></div>
+
+  <div class="actions">
+    <button id="btn-send" class="primary" disabled>Send now from selected alias</button>
+    <button id="btn-apply" disabled>Set From on draft (no send)</button>
+  </div>
+
+  <div id="status"></div>
+
+  <details>
+    <summary>Manage aliases</summary>
+    <div class="manual-row">
+      <input id="manual-alias" type="email" placeholder="alias@yourdomain.com" />
+      <button id="btn-add">Add</button>
+    </div>
+    <button id="btn-refresh" style="margin-top:8px">Refresh aliases from Microsoft 365</button>
+    <p class="hint">
+      Aliases are auto-discovered from your Microsoft 365 account when sign-in is
+      configured. You can also add addresses manually (e.g. shared mailboxes you
+      have Send&nbsp;As rights for); they are saved to your mailbox settings.
+    </p>
+  </details>
+</body>
+</html>
